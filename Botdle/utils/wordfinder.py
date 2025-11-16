@@ -11,13 +11,9 @@ def get_available_words() -> set[str]:
             all_words = soup.find('div', class_='list-body')
             unused_words = all_words.find_all('div', class_='single-word unused-word')
             for unused_word in unused_words:
-                results.add(unused_word.text)
+                results.add(unused_word.text.lower())
         else:
             print("Could not reach https://wordraiders.com/solvers/wordle/")
     except ConnectionError:
         print("Could not reach wordraiders.com")
     return results
-
-
-if __name__ == '__main__':
-    print(get_available_words())
