@@ -13,7 +13,7 @@ def main():
     letter_manager = LetterManager(available_words)
     answer = pick_answer(available_words)
     # answer = "eking"
-    print(f"{len(letter_manager.available_words) = }")
+    # print(f"{len(letter_manager.available_words) = }")
     
     first_guess = letter_manager.word_with_highest_count(count_duplicate_letters=False)
     print(first_guess)
